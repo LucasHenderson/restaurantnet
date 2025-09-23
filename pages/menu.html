@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Restaurant .NET</title>
+  <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+  <!-- Barra Superior -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="../imgs/NET.png" alt="Logo">
+    </div>
+    <div class="user-menu">
+      <img src="../imgs/user-icon.png" alt="Usuário" class="user-icon">
+      <div class="dropdown">
+        <a href="#">Configurações</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <div class="menu-container">
+    <h1>🍽️ Recomendação do Chefe</h1>
+    <div class="food-list">
+      <div class="food-item" data-price="48" data-discount="20">
+        <img src="../imgs/File-ao-Molho-Madeira-S.jpg" alt="Prato 1">
+        <div class="food-info">
+          <h3>Filé ao Molho Madeira</h3>
+          <p>Delicioso filé mignon ao molho madeira com champignons.</p>
+          <span class="price">R$ 48,00 <small class="discount">(-20%)</small></span>
+        </div>
+        <div class="quantity-control">
+          <button class="decrease">-</button>
+          <span class="quantity">0</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <h1>📖 Cardápio</h1>
+    <div class="food-list">
+      <div class="food-item" data-price="35">
+        <img src="../imgs/pizza-marguerita.jpg" alt="Prato 2">
+        <div class="food-info">
+          <h3>Pizza Marguerita</h3>
+          <p>Massa fina, queijo mussarela, tomate e manjericão fresco.</p>
+          <span class="price">R$ 35,00</span>
+        </div>
+        <div class="quantity-control">
+          <button class="decrease">-</button>
+          <span class="quantity">0</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Opções de Serviço -->
+  <footer class="options-container">
+    <h2>Escolha uma opção:</h2>
+    <div class="options">
+      <button class="service-btn" data-type="proprio">Delivery Próprio (+R$15)</button>
+      <button class="service-btn" data-type="parceiro">Delivery Parceiro (+R$5)</button>
+      <button class="service-btn" data-type="reserva">Reservar Mesa (+R$10)</button>
+    </div>
+
+  <div class="reservation hidden">
+    <h3>Escolha o horário da reserva:</h3>
+    <div class="reservation-options">
+      <button class="reservation-btn" data-time="19">19:00</button>
+      <button class="reservation-btn" data-time="20">20:00</button>
+      <button class="reservation-btn" data-time="21">21:00</button>
+      <button class="reservation-btn" data-time="22">22:00</button>
+    </div>
+    <p class="reserva-msg"></p>
+  </div>
+
+
+    <div class="summary">
+      <h3>Total: R$ <span id="total">0,00</span></h3>
+      <button class="confirm-btn">Confirmar Pedido</button>
+    </div>
+  </footer>
+
+  <script src="../js/menu.js"></script>
+</body>
+</html>
