@@ -17,15 +17,22 @@
         <label for="email">E-mail</label>
         <input type="email" id="email" placeholder="Digite seu e-mail" required>
       </div>
-      <div class="input-group">
+
+      <div class="input-group password-group">
         <label for="password">Senha</label>
-        <input type="password" id="password" placeholder="Digite sua senha" required>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Digite sua senha" required>
+          <span class="toggle-password" data-target="password">👁️</span>
+        </div>
       </div>
+
       <button type="submit">Entrar</button>
     </form>
     <p class="register-link">
       Não tem conta? <a href="new_user.html">Cadastre-se</a>
     </p>
   </div>
+
+  <script src="../js/login.js"></script>
 </body>
 </html>

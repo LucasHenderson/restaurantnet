@@ -10,15 +10,18 @@
   <!-- Barra Superior -->
   <header class="topbar">
     <div class="logo">
-      <img src="../imgs/NET.png" alt="Logo">
+      <a href="menu.html"><img src="../imgs/NET.png" alt="Logo"></a>
     </div>
-    <div class="user-menu">
-      <img src="../imgs/user-icon.png" alt="Usuário" class="user-icon">
-      <div class="dropdown">
-        <a href="#">Configurações</a>
-        <a href="#">Logout</a>
+    <nav class="topbar-actions">
+      <a href="user_orders.html" class="orders-btn">Meus Pedidos e Reservas</a>
+      <div class="user-menu">
+        <img src="../imgs/user-icon.png" alt="Usuário" class="user-icon">
+        <div class="dropdown">
+          <a href="../pages/config_user.html">Configurações</a>
+          <a href="#">Logout</a>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Conteúdo -->
@@ -67,17 +70,16 @@
       <button class="service-btn" data-type="reserva">Reservar Mesa (+R$10)</button>
     </div>
 
-  <div class="reservation hidden">
-    <h3>Escolha o horário da reserva:</h3>
-    <div class="reservation-options">
-      <button class="reservation-btn" data-time="19">19:00</button>
-      <button class="reservation-btn" data-time="20">20:00</button>
-      <button class="reservation-btn" data-time="21">21:00</button>
-      <button class="reservation-btn" data-time="22">22:00</button>
+    <div class="reservation hidden">
+      <h3>Escolha o horário da reserva:</h3>
+      <div class="reservation-options">
+        <button class="reservation-btn" data-time="19">19:00</button>
+        <button class="reservation-btn" data-time="20">20:00</button>
+        <button class="reservation-btn" data-time="21">21:00</button>
+        <button class="reservation-btn" data-time="22">22:00</button>
+      </div>
+      <p class="reserva-msg"></p>
     </div>
-    <p class="reserva-msg"></p>
-  </div>
-
 
     <div class="summary">
       <h3>Total: R$ <span id="total">0,00</span></h3>

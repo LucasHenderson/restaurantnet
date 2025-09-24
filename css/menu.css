@@ -32,6 +32,25 @@ body {
   border-radius: 50%;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.orders-btn {
+  background: #71100f;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.orders-btn:hover {
+  background: #430909;
+}
+
 .user-menu {
   position: relative;
 }
@@ -195,38 +214,17 @@ body {
   background: #555;
 }
 
-.reservation {
-  margin-top: 1rem;
-}
-
-.reservation.hidden {
-  display: none;
-}
-
-.summary {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.confirm-btn {
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
+.service-btn.active {
   background: #71100f;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s;
 }
 
-.confirm-btn:hover {
-  background: #430909;
-}
-
-/* Reservas */
 .reservation {
   margin-top: 1rem;
   text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .reservation-options {
@@ -253,12 +251,33 @@ body {
 }
 
 .reservation-btn.active {
-  background: #71100f;
+  background: #007bff;
+  transform: scale(1.05);
 }
 
 .reserva-msg {
   margin-top: 0.8rem;
   font-size: 14px;
+}
+
+.summary {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.confirm-btn {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: #71100f;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirm-btn:hover {
+  background: #430909;
 }
 
 /* Responsividade */

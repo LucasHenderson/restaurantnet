@@ -43,6 +43,11 @@ let selectedReservation = null;
 serviceBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     serviceType = btn.dataset.type;
+
+    // Marca botão ativo
+    serviceBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
     reservationDiv.classList.add("hidden");
     reservaMsg.textContent = "";
     selectedReservation = null;

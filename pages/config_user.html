@@ -3,15 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Restaurant .NET</title>
+  <title>Perfil - Restaurant .NET</title>
   <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
+<!-- Barra Superior -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="menu.html"><img src="../imgs/NET.png" alt="Logo"></a>
+    </div>
+    <nav class="topbar-actions">
+      <a href="user_orders.html" class="orders-btn">Meus Pedidos e Reservas</a>
+      <div class="user-menu">
+        <img src="../imgs/user-icon.png" alt="Usuário" class="user-icon">
+        <div class="dropdown">
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
   <div class="login-container">
     <div class="logo">
-      <img src="../imgs/NET.png" alt="Logo">
+      <img src="../imgs/user-icon.png" alt="Logo">
     </div>
-    <h2>Cadastro</h2>
+    <h2>Perfil</h2>
     <form id="register-form">
       <div class="input-group">
         <label for="name">Nome Completo</label>
@@ -49,12 +64,9 @@
         </div>
       </div>
       
-      <button type="submit">Cadastrar</button>
+      <button type="submit">Salvar</button>
     </form>
-    <p class="register-link">
-      Já tem conta? <a href="login.html">Faça login</a>
-    </p>
   </div>
-  <script src="../js/new_user.js"></script>
+  <script src="../js/config_user.js"></script>
 </body>
 </html>
