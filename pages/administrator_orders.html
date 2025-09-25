@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos e Reservas dos Clientes - Restaurant .NET</title>
+  <link rel="stylesheet" href="../css/administrator_orders.css">
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="../pages/administrator.html"><img src="../imgs/NET.png" alt="Logo"></a>
+    </div>
+    <nav class="topbar-actions">
+      <div class="user-menu">
+        <img src="../imgs/user-icon.png" alt="Usuário" class="user-icon">
+        <div class="dropdown">
+          <a href="#">Configurações</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <div class="orders-container">
+    <!-- Delivery Próprio -->
+    <section class="orders-section">
+      <div class="section-header">
+        <input type="date" id="filter-proprio" class="filter-date">
+        <h2>📦 Pedidos Delivery Próprio</h2>
+        <span id="total-proprio" class="total-faturado">Total Faturado: R$0,00</span>
+      </div>
+      <ul id="list-proprio" class="order-list"></ul>
+      <div id="pagination-proprio" class="pagination"></div>
+    </section>
+
+    <!-- Delivery Parceiro -->
+    <section class="orders-section">
+      <div class="section-header">
+        <input type="date" id="filter-parceiro" class="filter-date">
+        <h2>🚚 Pedidos Delivery Parceiro</h2>
+        <span id="total-parceiro" class="total-faturado">Total Faturado: R$0,00</span>
+      </div>
+      <ul id="list-parceiro" class="order-list"></ul>
+      <div id="pagination-parceiro" class="pagination"></div>
+    </section>
+
+    <!-- Reservas -->
+    <section class="orders-section">
+      <div class="section-header">
+        <input type="date" id="filter-reservas" class="filter-date">
+        <h2>🍽️ Reservas de Mesas</h2>
+        <span id="total-reservas" class="total-faturado">Total Faturado: R$0,00</span>
+      </div>
+      <ul id="list-reservas" class="order-list"></ul>
+      <div id="pagination-reservas" class="pagination"></div>
+    </section>
+
+    <!-- Ranking sem desconto -->
+    <section class="orders-section">
+      <h2>📊 Comidas Mais Vendidas (Sem Desconto)</h2>
+      <ul id="ranking-sem" class="order-list"></ul>
+      <div id="pagination-sem" class="pagination"></div>
+    </section>
+
+    <!-- Ranking com desconto -->
+    <section class="orders-section">
+      <h2>📊 Comidas Mais Vendidas (Com Desconto)</h2>
+      <ul id="ranking-com" class="order-list"></ul>
+      <div id="pagination-com" class="pagination"></div>
+    </section>
+  </div>
+
+  <script src="../js/administrator_orders.js"></script>
+</body>
+</html>

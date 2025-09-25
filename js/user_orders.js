@@ -8,18 +8,18 @@ userIcon.addEventListener("click", () => {
 // --- Mock de pedidos (simulação) ---
 const pedidos = {
   proprio: [
-    { id: 1, itens: [{ nome: "Pizza Marguerita", qtd: 3, preco: 48 }], endereco: "Rua das Flores, 123", total: 144, data: new Date(), confirmado: false },
-    { id: 2, itens: [{ nome: "Lasanha", qtd: 2, preco: 35 }], endereco: "Rua A", total: 70, data: new Date(), confirmado: true },
-    { id: 3, itens: [{ nome: "Hambúrguer", qtd: 1, preco: 25 }], endereco: "Rua B", total: 25, data: new Date(), confirmado: false },
-    { id: 4, itens: [{ nome: "Salada Caesar", qtd: 2, preco: 20 }], endereco: "Rua C", total: 40, data: new Date(), confirmado: true },
+    { id: 1, itens: [{ nome: "Pizza Marguerita", qtd: 3, preco: 48 }], endereco: "Rua das Flores, 123", total: 144, data: new Date(), confirmado: false, cancelado: false },
+    { id: 2, itens: [{ nome: "Lasanha", qtd: 2, preco: 35 }], endereco: "Rua A", total: 70, data: new Date(), confirmado: true, cancelado: false },
+    { id: 3, itens: [{ nome: "Hambúrguer", qtd: 1, preco: 25 }], endereco: "Rua B", total: 25, data: new Date(), confirmado: false, cancelado: false },
+    { id: 4, itens: [{ nome: "Salada Caesar", qtd: 2, preco: 20 }], endereco: "Rua C", total: 40, data: new Date(), confirmado: true, cancelado: false },
   ],
   parceiro: [
-    { id: 5, itens: [{ nome: "Filé ao Molho Madeira", qtd: 2, preco: 38.4 }], endereco: "Av. Central, 456", total: 76.8, data: new Date(), confirmado: true },
-    { id: 6, itens: [{ nome: "Strogonoff", qtd: 1, preco: 30 }], endereco: "Av. X", total: 30, data: new Date(), confirmado: false },
+    { id: 5, itens: [{ nome: "Filé ao Molho Madeira", qtd: 2, preco: 38.4 }], endereco: "Av. Central, 456", total: 76.8, data: new Date(), confirmado: true, cancelado: false },
+    { id: 6, itens: [{ nome: "Strogonoff", qtd: 1, preco: 30 }], endereco: "Av. X", total: 30, data: new Date(), confirmado: false, cancelado: false },
   ],
   reservas: [
-    { id: 7, itens: [{ nome: "Pizza Calabresa", qtd: 1, preco: 35 }], endereco: "Presencial", total: 45, horario: "20:00", data: new Date(), confirmado: false },
-    { id: 8, itens: [{ nome: "Risoto de Camarão", qtd: 1, preco: 55 }], endereco: "Presencial", total: 65, horario: "21:00", data: new Date(), confirmado: true },
+    { id: 7, itens: [{ nome: "Pizza Calabresa", qtd: 1, preco: 35 }], endereco: "Presencial", total: 45, horario: "20:00", data: new Date(), confirmado: false, cancelado: false },
+    { id: 8, itens: [{ nome: "Risoto de Camarão", qtd: 1, preco: 55 }], endereco: "Presencial", total: 65, horario: "21:00", data: new Date(), confirmado: true, cancelado: false },
   ]
 };
 
@@ -59,21 +59,28 @@ function renderLista(containerId, lista, paginationId, currentPage, isReserva = 
       .map(i => `${i.nome} (${i.qtd}): R$${i.preco.toFixed(2)} un`)
       .join(", ");
 
+    // Status do pedido
+    let statusText = "⏳ Aguardando Confirmação";
+    if (pedido.confirmado) statusText = "✅ Confirmado";
+    else if (pedido.cancelado) statusText = "❌ Cancelado";
+
     li.innerHTML = `
       <div class="order-header">${itensHTML}</div>
       <div class="order-details">Endereço: ${pedido.endereco}</div>
       <div class="order-details">Total: R$${pedido.total.toFixed(2)}</div>
       <div class="order-details">Data: ${pedido.data.toLocaleDateString()} - ${pedido.data.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
       ${isReserva ? `<div class="order-details">Horário Reserva: ${pedido.horario}</div>` : ""}
-      <div class="order-status">Status: ${pedido.confirmado ? "✅ Confirmado" : "⏳ Aguardando Confirmação"}</div>
+      <div class="order-status">Status: ${statusText}</div>
     `;
 
-    if (!pedido.confirmado) {
+    // Botão de cancelar só aparece se não foi confirmado nem cancelado
+    if (!pedido.confirmado && !pedido.cancelado) {
       const cancelBtn = document.createElement("button");
       cancelBtn.classList.add("cancel-btn");
       cancelBtn.textContent = "Cancelar";
       cancelBtn.addEventListener("click", () => {
-        removerPedido(containerId, pedido.id);
+        pedido.cancelado = true;
+        renderPedidos();
       });
       li.appendChild(cancelBtn);
     }
@@ -109,17 +116,6 @@ function getKeyFromId(id) {
   if (id === "delivery-proprio") return "proprio";
   if (id === "delivery-parceiro") return "parceiro";
   if (id === "reservas") return "reservas";
-}
-
-function removerPedido(tipo, id) {
-  if (tipo === "delivery-proprio") {
-    pedidos.proprio = pedidos.proprio.filter(p => p.id !== id);
-  } else if (tipo === "delivery-parceiro") {
-    pedidos.parceiro = pedidos.parceiro.filter(p => p.id !== id);
-  } else if (tipo === "reservas") {
-    pedidos.reservas = pedidos.reservas.filter(p => p.id !== id);
-  }
-  renderPedidos();
 }
 
 // --- Inicializar ---
