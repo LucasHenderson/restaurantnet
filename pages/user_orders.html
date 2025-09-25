@@ -25,15 +25,24 @@
 
   <!-- Conteúdo -->
   <div class="orders-container">
-    <h1>📦 Pedidos por Delivery Próprio</h1>
+    <div class="section-header">
+      <h1>📦 Pedidos por Delivery Próprio</h1>
+      <input type="date" id="filter-proprio" class="filter-date">
+    </div>
     <ul id="delivery-proprio" class="order-list"></ul>
     <div id="pagination-proprio" class="pagination"></div>
 
-    <h1>🚚 Pedidos por Delivery Parceiro</h1>
+    <div class="section-header">
+      <h1>🚚 Pedidos por Delivery Parceiro</h1>
+      <input type="date" id="filter-parceiro" class="filter-date">
+    </div>
     <ul id="delivery-parceiro" class="order-list"></ul>
     <div id="pagination-parceiro" class="pagination"></div>
 
-    <h1>🍽️ Reservas Feitas</h1>
+    <div class="section-header">
+      <h1>🍽️ Reservas Feitas</h1>
+      <input type="date" id="filter-reservas" class="filter-date">
+    </div>
     <ul id="reservas" class="order-list"></ul>
     <div id="pagination-reservas" class="pagination"></div>
   </div>
