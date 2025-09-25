@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-// Toggle de mostrar/ocultar senha (👁️ / 🙈)
+// Toggle de mostrar/ocultar senha (👁️ / ❌)
 document.querySelectorAll(".toggle-password").forEach(btn => {
   btn.addEventListener("click", () => {
     const targetId = btn.getAttribute("data-target");
@@ -34,7 +34,7 @@ document.querySelectorAll(".toggle-password").forEach(btn => {
 
     if (input.type === "password") {
       input.type = "text";
-      btn.textContent = "🙈"; // muda ícone
+      btn.textContent = "❌"; // muda ícone
     } else {
       input.type = "password";
       btn.textContent = "👁️";

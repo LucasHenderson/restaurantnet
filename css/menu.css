@@ -251,7 +251,7 @@ body {
 }
 
 .reservation-btn.active {
-  background: #007bff;
+  background: #71100f;
   transform: scale(1.05);
 }
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador - Restaurant .NET</title>
+  <link rel="stylesheet" href="../css/administrator.css">
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="logo">
+      <a href="../pages/administrator.html"><img src="../imgs/NET.png" alt="Logo"></a>
+    </div>
+    <nav class="topbar-actions">
+      <a href="administrator_orders.html" class="orders-btn">Pedidos e Reservas dos Clientes</a>
+      <div class="user-menu">
+        <img src="../imgs/user-icon.png" alt="Usuário" class="user-icon">
+        <div class="dropdown">
+          <a href="#">Configurações</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <div class="admin-container">
+    <h1>Gerenciar Menu</h1>
+    <button id="add-food-btn" class="add-btn">➕ Adicionar Nova Comida</button>
+    <ul id="food-list" class="food-list"></ul>
+    <div id="pagination" class="pagination"></div>
+  </div>
+
+  <script src="../js/administrator.js"></script>
+</body>
+</html>
