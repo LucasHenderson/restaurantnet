@@ -116,6 +116,39 @@ body {
   background: #555;
 }
 
+/* Controle de pedidos */
+.orders-control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.control-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.control-field label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.control-field input {
+  background: #2a2a2a;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 14px;
+  width: 200px;
+}
+
+
 /* Lista de comidas */
 .food-list {
   list-style: none;
@@ -205,8 +238,6 @@ body {
 .food-actions .chef-btn.active {
   border: 2px solid #71100f;
 }
-
-/* ... todo o css anterior ... */
 
 /* Paginação */
 .pagination {

@@ -5,6 +5,25 @@ userIcon.addEventListener("click", () => {
   userMenu.classList.toggle("active");
 });
 
+// --- Controle de pedidos ---
+let qtdPedidos = 0;
+let limitador = 50;
+
+const qtdPedidosInput = document.getElementById("qtdPedidos");
+const limitadorInput = document.getElementById("limitador");
+
+qtdPedidosInput.value = qtdPedidos;
+limitadorInput.value = limitador;
+
+limitadorInput.addEventListener("input", e => {
+  let val = parseInt(e.target.value);
+  if (isNaN(val) || val < 0) {
+    e.target.value = limitador;
+  } else {
+    limitador = val;
+  }
+});
+
 // --- Lista de comidas (mock inicial) ---
 let comidas = [
   {
